@@ -50,7 +50,7 @@ class Instamojo {
    * @param string $username Instamojo username of the user
    * @param string $password Instamojo password of the user
    * @param string $app_id   Application ID provided by Instamojo
-    */
+   */
   public function __construct($app_id, $username = null, $password = null)
   {
     if (isset($app_id))
@@ -75,7 +75,7 @@ class Instamojo {
 
   /**
    * Default destructor.
-    */
+   */
   public function __destruct()
   {
     if ($this->curl != null)
@@ -87,7 +87,7 @@ class Instamojo {
   /**
    * Get the version of the API wrapper.
    * @return string Version of the API wrapper.
-    */
+   */
   public function getVersion()
   {
     return self::version;
@@ -105,7 +105,7 @@ class Instamojo {
   /**
    * Set the username
    * @param string $username Instamojo username of the user
-    */
+   */
   private function setUsername($username)
   {
     $this->username = (string) $username;
@@ -114,7 +114,7 @@ class Instamojo {
   /**
    * Set the password
    * @param string $password Instamojo username of the password
-    */
+   */
   private function setPassword($password)
   {
     $this->password = (string) $password;
@@ -133,7 +133,7 @@ class Instamojo {
    * Create the absolute path for the request
    * @param string $url The base URL (Here it is used by API_URL)
    * @param string $path The relative path
-    */
+   */
   private function buildPath($url, $path)
   {
     return $url . $path;
@@ -144,7 +144,7 @@ class Instamojo {
    * @param string $path The relative path
    * @param string $method POST/GET/POST/DELETE
    * @param array $data Data to be passed
-    */
+   */
   private function apiRequest($path, $method, array $data = null)
   {
     $path = (string) $path;
@@ -225,7 +225,7 @@ class Instamojo {
   /**
    * Authenticate the application.
    * @return array PHP array of the JSON response.
-    */
+   */
   public function apiAuth()
   {
     $response = $this->apiRequest('auth/', 'POST', $data = array('username' => $this->username, 'password' => $this->password));
@@ -247,7 +247,7 @@ class Instamojo {
   /**
    * List all the offers of the user.
    * @return array PHP array of the JSON response.
-    */
+   */
   public function listAllOffers()
   {
     if (!$this->AUTH_TOKEN)
@@ -267,7 +267,7 @@ class Instamojo {
    * List the complete offer details of the offer id mentioned in $slug.
    * @param array $slug The offer id.
    * @return array PHP array of the JSON response.
-    */
+   */
   public function listOneOfferDetail($slug)
   {
     if (!$this->AUTH_TOKEN)
@@ -286,7 +286,7 @@ class Instamojo {
   /**
    * Used to get an upload URL for the files to be uploaded, i.e. The cover image and the File.
    * @return array PHP array of the JSON response.
-    */
+   */
   public function getUploadUrl()
   {
     if (!$this->AUTH_TOKEN)
