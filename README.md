@@ -1,20 +1,33 @@
-# Instamojo PHP API
+# PHP wrapper for Instamojo API
 
-Assists you to programmatically create, edit and delete offers on Instamojo in PHP.
-
+Assists you to create, edit and delete offers on Instamojo using PHP.
 
 ## Usage
 
-    $instance = new Instamojo('USERNAME', 'PASSWORD', 'TOKEN_FROM_INSTAMOJO');
-    $auth = $instance->apiAuth();
-    $instance->setTitle('TITLE');
-    $instance->setDescription('DESCRIPTION');
-    $instance->setCurrency('INR');
-    $instance->setBasePrice('100');
-    $instance->setFilePath('IMG.jpg');
-    $instance->setCoverPath('COVER.jpg');
-    $offer = $instance->createOffer();
-    print_r($offer); 
+Create a new instance:
+
+```php
+$instance = new Instamojo('TOKEN_FROM_INSTAMOJO', 'USERNAME', 'PASSWORD');
+```
+
+Authenticate the instance by sending the `username` & `password` and in turn receiving a Auth Token.
+
+```php
+$auth = $instance->apiAuth();
+```
+
+Creating an offer:
+
+```php
+$instance->setTitle('TITLE');
+$instance->setDescription('DESCRIPTION');
+$instance->setCurrency('INR');
+$instance->setBasePrice('100');
+$instance->setFilePath('IMG.jpg');
+$instance->setCoverPath('COVER.jpg');
+$offer = $instance->createOffer();
+print_r($offer);
+```
 
 This will give you JSON object containing details of the offer that was just created.
 
@@ -25,9 +38,9 @@ You have these functions to interact with the API:
  * `getVersion()` Get the version of the API wrapper.
  * `apiAuth()` Authenticate the application.
  * `listAllOffers()` List all the offers of the user.
- * `listOneOfferDetail(slug)` List the complete offer details of the offer id mentioned in slug. 
- * `deleteAuthToken()` WARNING!! Deletes the authentication token recieved from Instamojo. Nothing will work after deleting this.
- * `archiveOffer(slug)` Archives(Deletes) the offer whos id is supplied.
+ * `listOneOfferDetail(slug)` List the complete offer details of the offer id mentioned in slug.
+ * `deleteAuthToken()` WARNING!! Deletes the authentication token received from Instamojo. Nothing will work after deleting this.
+ * `archiveOffer(slug)` Archives(Deletes) the offer whose id is supplied.
  * `setTitle(title)` Title, keep concise since slug is auto-generated.
  * `setDescription(description)` Detailed description of the offer, can contain markdown.
  * `setCurrency(currency)` Currency of the offer. Can be INR or USD.
@@ -41,9 +54,9 @@ You have these functions to interact with the API:
  * `setNote(note)` A note to be displayed to buyer after successful payment. This will also be sent via email and in the receipt/ticket that is sent as attachment to the email.
  * `setFilePath(file_path)` Path to the file you want to sell.
  * `setCoverPath(cover_path)` Path to the cover image. This resolution of this image should be 950X320.
- * `createOffer()` Function to create an instamojo offer.
+ * `createOffer()` Function to create an Instamojo offer.
  * `editOffer(slug)` Function to to edit an offer.
- 
+
 
 For `createOffer()`, `setTitle(title)`, `setBasePrice(base_price)` and `setCurrency(currency)` are the bare minimum
 pieces of information that is required. You can (and should) as much relevant information as possible.

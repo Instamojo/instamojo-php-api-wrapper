@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * The Instamojo API wrapper
+ */
+
 class Instamojo {
 
   // internal constant to enable/disable debugging
