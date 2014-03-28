@@ -4,19 +4,20 @@ Assists you to create, edit and delete offers on Instamojo using PHP.
 
 ## Usage
 
-Create a new instance:
+### Create a new instance
 
 ```php
 $instance = new Instamojo('TOKEN_FROM_INSTAMOJO', 'USERNAME', 'PASSWORD');
 ```
 
-Authenticate the instance by sending the `username` & `password` and in turn receiving a Auth Token.
+Authenticate the instance by sending the `username` & `password` and in turn receiving a Authentication Token.
 
 ```php
 $auth = $instance->apiAuth();
 ```
 
-Creating an offer:
+Creating an offer.
+This will give you JSON object containing details of the offer that was just created.
 
 ```php
 $instance->setTitle('TITLE');
@@ -26,16 +27,21 @@ $instance->setBasePrice('100');
 $instance->setFilePath('IMG.jpg');
 $instance->setCoverPath('COVER.jpg');
 $offer = $instance->createOffer();
-print_r($offer);
 ```
 
-This will give you JSON object containing details of the offer that was just created.
+### Using an already existing authentication token
+
+```php
+$instance = new Instamojo('TOKEN_FROM_INSTAMOJO');
+$instance->setAuthToken('AUTH_TOKEN');
+```
 
 ## Available Functions
 
 You have these functions to interact with the API:
 
  * `getVersion()` Get the version of the API wrapper.
+ * `setAuthToken()` Set the authentication token for the current instance. This method is used when you have already authenticated the application once for a user and wish to reuse it.
  * `apiAuth()` Authenticate the application.
  * `listAllOffers()` List all the offers of the user.
  * `listOneOfferDetail(slug)` List the complete offer details of the offer id mentioned in slug.
