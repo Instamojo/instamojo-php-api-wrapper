@@ -127,7 +127,7 @@ class Instamojo {
   /**
    * Set the ID
    * @param string $id Instamojo APP_ID provided by Instamojo
-    */
+   */
   private function setID($id)
   {
     $this->APP_ID = (string) $id;
@@ -141,6 +141,15 @@ class Instamojo {
   private function buildPath($url, $path)
   {
     return $url . $path;
+  }
+
+  /**
+   * Set Authentication Token for the instance
+   * @param string $token The authentication token
+   */
+  public function setAuthToken($token)
+  {
+    $this->AUTH_TOKEN = (string) $token;
   }
 
   /**
