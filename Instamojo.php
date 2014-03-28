@@ -59,7 +59,7 @@ class Instamojo {
   {
     if (isset($app_id))
     {
-      $this->setID($id);
+      $this->setID($app_id);
     }
     else
     {
