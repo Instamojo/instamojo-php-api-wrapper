@@ -176,13 +176,7 @@ class Instamojo {
      */
     static function init($type='app', $params, $test=false)
     {
-        // $scope = isset($params['scope']) ? $params['scope'] : NULL;
-
-        // if (self::$thisObj != null && (self::$scope == $scope || $scope == NULL ) ) {
-            
-        //     return self::$thisObj;
-
-        // } else {
+       
             
             self::validateTypeParams($type, $params);
             self::$authType     = $type;
@@ -206,7 +200,7 @@ class Instamojo {
             self::$scope = isset($auth_response['scope']) ? $auth_response['scope'] : '';
 
             return self::$thisObj;
-       // }
+ 
     }
 
     /**

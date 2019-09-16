@@ -18,7 +18,7 @@ $api = Instamojo\Instamojo::init($authType,[
         "username" => 'FOO', /** In case of user based authentication**/
         "password" => 'XXXXXXXX' /** In case of user based authentication**/
        
-    ],true); /** true for sandbox enviorment**/
+    ],true); /** true for sandbox environment**/
 
 ```
 
@@ -62,10 +62,10 @@ catch (Exception $e) {
 }
 ```
 
-This will give you JSON object containing details of the Payment Request that was just created with `longurl` key provide you instamojo-payment-url.
+This will give you JSON object containing details of the Payment Request and a `longurl` on which you can perform a checkout process.
 
 ### Recommended seamless checkout Option
- You can render your Instamojo checkout form and collect payments on your webpage with just the instamojo-payment-url obtained in `createPaymentRequest()` using JS based seamless checkout library. To know more how its work [Click here](https://docs.instamojo.com/page/seamless-checkout).
+ You can render the Instamojo checkout form and collect payments on your webpage using the instamojo-payment-url obtained from `createPaymentRequest()` using our JS based seamless checkout library. To know more about how it works [Click here](https://docs.instamojo.com/page/seamless-checkout).
 
 ## Payment Request Creation Parameters
 
@@ -82,8 +82,8 @@ This will give you JSON object containing details of the Payment Request that wa
   * `redirect_url`: set this to a thank-you page on your site. Buyers will be redirected here after successful payment.
   * `webhook`: set this to a URL that can accept POST requests made by Instamojo server after successful payment.
   * `allow_repeated_payments`: To disallow multiple successful payments on a Payment Request pass `false` for this field. If this is set to `false` then the link is not accessible publicly after first successful payment, though you can still access it using API(default value: `true`).
-  * `partner_fee_type` : Allows you to receive a cut from from payments you facilitate. For fixed fee set this to `fixed`, or for percentage fee set it to `percent`.
-  * `partner_fee` : This describes the fee that you would collect. It can be either a fixed amount, or a percentage of the original amount, depending on the value of `partner_fee_type`.
+  * `partner_fee_type` : Allows you to receive a cut from the payments you facilitate. For fixed fee set this to `fixed`, or for percentage fee set it to `percent`.
+  * `partner_fee` : This is a double data type key which describes the fee that you would collect. It can be either a fixed amount, or a percentage of the original amount, depending on the value of `partner_fee_type`.
   * `mark_fulfilled` : Flag to determine if you want to put the payment on hold until you explicitly fulfil it. If `mark_fulfilled` is `True` the payment will be paid out to the merchant. If `mark_fulfilled` is `False`, then the payment will be put on hold until you explicitly fulfil the payment. See Fulfil a Payment below on how to fulfil a payment.
   * `expires_at` : Time after which the payment request will be expired in UTC timestamp. Max value is 600 seconds. Default is Null.
     
@@ -219,7 +219,7 @@ catch (Exception $e) {
 ```
 `$payment_request_id` id the `id` key obtained in `createPaymentRequest()` method.
 
-This will give you JSON object containing with created `order_id` key.
+This will give you JSON object that contains newly created order id in `order_id` key.
 
 
 ### Get the  details of a Gateway Order
@@ -297,7 +297,7 @@ catch (Exception $e) {
 }
 ```
 
-This will give you JSON object containing details of the  Refund.
+This will give you JSON object containing details of the Refund.
 
 
 
@@ -314,7 +314,7 @@ catch (Exception $e) {
 }
 ```
 
-This will give you an array containing Refunds  details so far.
+This will give you an array containing Refunds details so far.
 
 getRefunds() also accepts optional parameters for pagination.
 

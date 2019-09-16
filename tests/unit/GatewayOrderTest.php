@@ -20,7 +20,7 @@ class GatewayOrderTest extends TestCase
         
         $gateway_order = $this->instaobj->createGatewayOrder([
             "name" => "XYZ",
-            "email" => "xyz@squareboat.com",
+            "email" => "xyz@foo.com",
             "phone" => "9999999988",
             "amount" => "200",
             "transaction_id" => $transaction_id,
