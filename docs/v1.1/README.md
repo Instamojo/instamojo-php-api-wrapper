@@ -43,7 +43,9 @@ catch (Exception $e) {
 
 This will give you JSON object containing details of the Payment Request that was just created.
 
-
+### Recommended seamless checkout Option
+ You can render the Instamojo checkout form and collect payments on your webpage using the instamojo-payment-url obtained from `createPaymentRequest()` using our JS based seamless checkout library. To know more about how it works [Click here](https://docs.instamojo.com/page/seamless-checkout).
+ 
 ### Get the status or details of a Payment Request
 
 ```php
