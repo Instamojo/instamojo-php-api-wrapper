@@ -358,7 +358,23 @@ For example:
 $response = $api->getRefunds(50, 1);
 ```
 
+
+## Development & Testing
+
+We support two environments for integration, **Sandbox** and **Production**. 
+
+> For all the testing and development purposes, please use sandbox. 
+> You can get testing credentials from sandbox dashboard. Additionally, you need to pass "sandbox: true". See "Initialization" for more information.
+
 ## <a name="faqs"> Common FAQ's
 
 * <a href="https://support.instamojo.com/hc/en-us/articles/212214265-How-do-I-get-my-Client-ID-and-Client-Secret-"> How to get your client Id and Client secret </a> 
 
+
+## Security
+
+If you discover any security related issues, please email to [support@instamojo.com](mailto:support@instamojo.com)  instead of using the issue tracker.
+
+## License
+
+The MIT License. Please see  [License File](https://github.com/Instamojo/instamojo-nodejs/blob/master/LICENSE.md)  for more information. Copyright © 2020  [Instamojo](https://www.instamojo.com/)
