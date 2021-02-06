@@ -1,6 +1,6 @@
 <?php
 
-namespace Instamojo\Exception;
+namespace Instamojo\Exceptions;
 
 class InvalidRequestException extends InstamojoException {
     public function __construct($errorMessage) {
