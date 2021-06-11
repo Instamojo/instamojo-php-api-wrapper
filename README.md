@@ -39,7 +39,7 @@ $api = Instamojo\Instamojo::init($authType,[
 
 ## Documentation
 
-See the Documentation for datailed instructions
+See the Documentation for detailed instructions
 
  * <a href="https://docs.instamojo.com/v1.1"> v1.1 Documentation </a>
  * <a href="https://docs.instamojo.com/v2"> v2 Documentation </a>
